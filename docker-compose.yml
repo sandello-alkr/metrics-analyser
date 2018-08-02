@@ -1,0 +1,17 @@
+version: '2'
+services:
+  web:
+    image: httpd:2.4
+    ports:
+      - 8085:80
+    volumes:
+      - ./:/usr/local/apache2/htdocs
+#  analyzer:
+#    image: php
+#    volumes:
+#      - ./:/app
+#    command: php /app/analyzer.php
+  python:
+    build: ./py
+    volumes:
+      - ./py:/app

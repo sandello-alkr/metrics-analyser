@@ -1,0 +1,8 @@
+SETTINGS = {
+    'host': 'https://jira',
+    'project': 'ShortName',
+}
+AUTH = {
+    'username': 'username',
+    'password': 'password'
+}

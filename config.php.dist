@@ -1,0 +1,25 @@
+<?php
+const PROJECT = "ACS";
+const LIFECYCLE_STATUSES = [
+    "In Progress",
+    "Back to Dev",
+    "Code Review",
+    "Ready for Test",
+    "Ready to release",
+    "In Test",
+    "Ready for deploy to test"
+];
+const EFFORT_STATUSES = [
+    "In Progress",
+    "In Test",
+];
+const USERNAME = 'username';
+const PASSWORD = 'password';
+const SPRINTS = [
+    "Sprint 13",
+    "Sprint 14",
+    "Sprint 15",
+    "Sprint 16",
+    "Sprint 17",
+    "Sprint 18"
+];

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/transparency.min.js"></script>
+    <title>Story points adjuster</title>
+</head>
+<body>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Issue</th>
+                <th scope="col">Summary</th>
+                <th scope="col">After estimation</th>
+                <th scope="col">Pre estimation</th>
+            </tr>
+            </thead>
+            <tbody class="issues">
+                <tr>
+                    <td class="key align-middle"></td>
+                    <td class="description align-middle"></td>
+                    <td class="after">
+                        <select class="custom-select">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>5</option>
+                            <option>8</option>
+                            <option>13</option>
+                        </select>
+                    </td>
+                    <td class="pre text-hide align-middle"></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+   <!-- <div class="hidden issue-template">
+        <div class="row">
+            <div class="col-sm name"></div>
+            <div class="col-sm after"></div>
+            <div class="col-sm pre"></div>
+        </div>-->
+    <script src="js/story-pointing.js"></script>
+</body>
+</html>
