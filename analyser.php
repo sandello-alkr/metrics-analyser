@@ -2,10 +2,9 @@
 if (!file_exists(__DIR__ . "/config.php")) {
     throw new Exception("Create config.php file from config.php.dist");
 }
-include_once("config.php");
+require("config.php");
 
 foreach (SPRINTS as $SPRINT) {
-//    print_r($SPRINT);
     saveJsonForSprint($SPRINT);
 }
 
@@ -14,7 +13,7 @@ function saveJsonForSprint($sprint)
     if (file_exists(__DIR__ . "/data/original/" . PROJECT . "-" . $sprint . ".json")) {
         $string = file_get_contents(__DIR__ . "/data/original/" . PROJECT . "-" . $sprint . ".json");
     } else {
-        $ch = curl_init(str_replace(' ', '+', "https://jira-ise.server.traveljigsaw.com/rest/api/2/search?jql=project = " . PROJECT . " AND Sprint = \"" . $sprint . "\" AND resolution = Done ORDER BY priority DESC, updated DESC&expand=changelog&fields=id,key,status,issuetype,created,updated,priority,histories,summary,customfield_10602&maxResults=5000"));
+        $ch = curl_init(str_replace(' ', '+', JIRA_HOST . "/rest/api/2/search?jql=project = " . PROJECT . " AND Sprint = \"" . $sprint . "\" AND resolution = Done ORDER BY priority DESC, updated DESC&expand=changelog&fields=id,key,status,issuetype,created,updated,priority,histories,summary,customfield_10602&maxResults=5000"));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Basic ' . base64_encode(USERNAME . ':' . PASSWORD)]);
@@ -24,7 +23,6 @@ function saveJsonForSprint($sprint)
     }
 
     date_default_timezone_set("Europe/London");
-    //$string = file_get_contents("data/ACS-Sprint-15.json");
     $json_a = json_decode($string, true);
 
     $issues = $json_a['issues'];

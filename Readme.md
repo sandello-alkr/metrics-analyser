@@ -5,10 +5,18 @@ by Aliaksey Krychko
 Docker compose
 
 ## To start:
+If you're doing Kanban, v3 will be better for you, it will group data by month (or week, commented).
 1. Pull this repo, create `py/config.py` from `py/config.py.dist`, set username, password and project name.
-2. Run `docker-compose up`
-3. go to [http://localhost:8080/v3.0.html](http://localhost:8080/v3.0.html)
+2. Make sure to uncomment `COMPOSE_FILE=docker-compose.yml:docker-compose-v3.yml` in `.env`
+3. Run `docker-compose up`
+4. go to [http://localhost:8080/v3.0.html](http://localhost:8080/v3.0.html)
+To update data without restarting the web container, run `docker-compose -f docker-compose-v3.yml run --rm python`
 
-To update data without restarting the web container, run `docker-compose run --rm python`
+If you're doing scram with sprints, v1 might be your choise.
+1. Pull this repo, create `config.php` from `config.php.dist`, set all info needed.
+2. Make sure to uncomment `COMPOSE_FILE=docker-compose.yml:docker-compose-v1.yml` in `.env`
+3. Run `docker-compose up`
+3. go to [http://localhost:8080/](http://localhost:8080/)
 
 Sprints needed are specified as constant arrays in two(TODO) places: `config.php` and `chart.js`
+

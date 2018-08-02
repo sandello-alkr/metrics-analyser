@@ -1,0 +1,7 @@
+version: '2'
+services:
+  analyzer:
+    image: php
+    volumes:
+      - ./:/app
+    command: php /app/analyser.php
