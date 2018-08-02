@@ -1,6 +1,6 @@
 version: '2'
 services:
-  analyzer:
+  php:
     image: php
     volumes:
       - ./:/app
